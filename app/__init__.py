@@ -8,6 +8,7 @@ from flask_migrate import Migrate, MigrateCommand
 from flask_sqlalchemy import SQLAlchemy
 from config import config
 from flask_script import Manager
+from flask_admin import Admin
 
 
 db = SQLAlchemy()
@@ -18,9 +19,14 @@ def create_app(config_name):
     app.config.from_object(config[config_name])
 
     from app.api import api as api_bp
-    app.register_blueprint(api_bp)
+    app.register_blueprint(api_bp, url_prefix='/api')
+
+    from app.home import home as home_bp
+    app.register_blueprint(home_bp)
 
     db.init_app(app=app)
+    admin = Admin(name='Api Background', template_mode='bootstrap3', app=app)
+
     migrate = Migrate(app=app, db=db)
 
     manager = Manager(app=app)
