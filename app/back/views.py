@@ -6,6 +6,7 @@
 from flask_admin import AdminIndexView, expose
 from flask_admin.contrib import sqla
 from flask import redirect, url_for, request, helpers
+from flask_login import current_user
 from werkzeug.security import generate_password_hash
 
 from app import login, db, admin
@@ -27,7 +28,7 @@ from app.models import User
 class MyModelView(sqla.ModelView):
 
     def is_accessible(self):
-        return login.current_user.is_authenticated
+        return current_user.is_authenticated
 
 
 # Create customized index view class that handles login & registration
@@ -42,7 +43,7 @@ class MyAdminIndexView(AdminIndexView):
     @expose('/login/', methods=('GET', 'POST'))
     def login_view(self):
         # handle user login
-        form = LoginForm(request.form)
+        form = LoginForm()
         if form.validate_form_on_submit():
             user = form.get_user()
             login.login_user(user)

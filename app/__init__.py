@@ -10,11 +10,13 @@ from config import config
 from flask_script import Manager
 from flask_admin import Admin
 from flask_login import LoginManager
+from flask_bootstrap import Bootstrap
 
 
 db = SQLAlchemy()
 admin = Admin(name='Api Background', template_mode='bootstrap3')
 login = LoginManager()
+bootstrap = Bootstrap()
 
 
 def create_app(config_name):
@@ -30,6 +32,7 @@ def create_app(config_name):
     db.init_app(app=app)
     admin.init_app(app=app)
     login.init_app(app=app)
+    bootstrap.init_app(app=app)
 
     migrate = Migrate(app=app, db=db)
 
@@ -37,5 +40,6 @@ def create_app(config_name):
     manager.add_command('db', MigrateCommand)
 
     from app.models import User
+    from app import back
 
     return app

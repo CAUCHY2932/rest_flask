@@ -4,6 +4,7 @@
     :DATE: 2019/9/17 22:58
 """
 from flask_wtf import FlaskForm
+from werkzeug.security import check_password_hash
 from wtforms import StringField, validators, PasswordField
 
 
@@ -23,8 +24,8 @@ class LoginForm(FlaskForm):
             # if user.password != self.password.data:
             raise validators.ValidationError('Invalid password')
 
-    def get_user(self):
-        return db.session.query(User).filter_by(login=self.login.data).first()
+    # def get_user(self):
+    #     return db.session.query(User).filter_by(login=self.login.data).first()
 
 
 class RegistrationForm(FlaskForm):
@@ -32,7 +33,7 @@ class RegistrationForm(FlaskForm):
     email = StringField()
     password = PasswordField(validators=[validators.required()])
 
-    def validate_login(self, field):
-        if db.session.query(User).filter_by(login=self.login.data).count() > 0:
-            raise validators.ValidationError('Duplicate username')
+    # def validate_login(self, field):
+    #     if db.session.query(User).filter_by(login=self.login.data).count() > 0:
+    #         raise validators.ValidationError('Duplicate username')
 
