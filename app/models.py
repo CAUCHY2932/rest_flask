@@ -4,10 +4,12 @@
     :DATE: 2019/9/17 15:21
 """
 from flask import current_app
+from flask_admin.contrib.sqla import ModelView
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from werkzeug.security import generate_password_hash, check_password_hash
 from app import db
 from flask_login import UserMixin
+from app import admin
 
 
 class User(UserMixin, db.Model):
@@ -49,3 +51,5 @@ class User(UserMixin, db.Model):
 
     def verify_password(self, password):
         return check_password_hash(self.password_hash, password)
+
+
