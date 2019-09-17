@@ -3,11 +3,9 @@
     :author: young
     :DATE: 2019/9/17 15:19
 """
-from . import api2
+from . import api
 
 
-@api2.route('/')
+@api.route('/')
 def index():
     return 'hello'
-
-

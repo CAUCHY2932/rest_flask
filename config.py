@@ -7,6 +7,7 @@ import os
 
 
 class Config:
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     @staticmethod
     def init_app(app):
@@ -21,7 +22,7 @@ class DevConfig(Config):
     SQLALCHEMY_RECORD_QUERIES = True
 
     SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
-                              'postgresql://postgres:123456@localhost/dev'
+                              'postgresql://postgres:123456@localhost/rest'
 
     @classmethod
     def init_app(cls, app):
