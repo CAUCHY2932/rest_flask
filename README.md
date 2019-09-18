@@ -17,3 +17,23 @@
 `share-远程苹果事件`
 
 `flask run -p 5010`
+
+## 目标
+
+- 仿造微博api制作api
+- 迅速了解架构
+
+
+## 心得
+
+- flask-wtf继承自wtforms，本身是通过渲染页面，获取表单数据，那么我们如何在设计api的过程中也使用它来验证表单数据呢，这就需要我们继承wtforms，编写一个方法
+- return一个错误和raise一个错误的性质是不一样的
+
+## 帐密组合
+
+`{"username":"johnson","password":"123456", "email":"12354@qq.com"}`
+
+
+pip install httpie
+
+` http --json --auth 12354@qq.com:123456 GET http://127.0.0.1:5008/api/tokens`

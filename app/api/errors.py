@@ -9,6 +9,13 @@ from flask.debughelpers import FormDataRoutingRedirect
 
 from app.exceptions import ValidationError
 from . import api
+# 因为错误是在api这一层定义的，aop截断在api路由之后
+
+
+def parameter_exception(message):
+    response = jsonify({'error': 'parameter exception', 'message': message})
+    response.status_code = 400
+    return response
 
 
 def bad_request(message):
