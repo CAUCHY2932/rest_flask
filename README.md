@@ -37,3 +37,7 @@
 pip install httpie
 
 ` http --json --auth 12354@qq.com:123456 GET http://127.0.0.1:5008/api/tokens`
+
+
+## 权限划分
+

@@ -32,10 +32,10 @@ def verify_password(email_or_token, password):
     print(g)
     return user.verify_password(password)
 
-#
-# @auth.error_handler
-# def auth_error():
-#     return unauthorized('Invalid credentials')
+
+@auth.error_handler
+def auth_error():
+    return unauthorized('Invalid credentials')
 
 
 @api.before_request

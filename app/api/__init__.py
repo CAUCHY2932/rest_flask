@@ -8,4 +8,4 @@ from flask import Blueprint
 api = Blueprint('api', __name__)
 
 # from . import user, errors
-from . import user, errors, authentication
+from . import user, errors, authentication, article
