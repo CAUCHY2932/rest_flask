@@ -1,0 +1,37 @@
+{% extends 'admin/master.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block body %}
+{{ super() }}
+<div class="row-fluid">
+
+    <div>
+        {% if current_user.is_authenticated %}
+        <h1>Flask-Admin example</h1>
+        <p class="lead">
+            Authentication
+        </p>
+        <p>
+            This example shows how you can use Flask-Login for authentication. It is only intended as a basic demonstration.
+        </p>
+        {% else %}
+
+
+
+
+
+        <div class="col-md-4">
+            {{ wtf.quick_form(form) }}
+        </div>
+
+
+
+
+
+
+        {{ link | safe }}
+        {% endif %}
+    </div>
+
+    <a class="btn btn-primary" href="/"><i class="icon-arrow-left icon-white"></i> Back</a>
+</div>
+{% endblock body %}
