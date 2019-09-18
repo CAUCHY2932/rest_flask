@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a71fbdcc-43b6-4ebb-8e5d-bc81291059ac" name="Default Changelist" comment="" />
+    <list default="true" id="a71fbdcc-43b6-4ebb-8e5d-bc81291059ac" name="Default Changelist" comment="[mac-young]- change settings file" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +137,7 @@
       <workItem from="1568704695446" duration="3756000" />
       <workItem from="1568708707424" duration="21540000" />
       <workItem from="1568786115326" duration="6913000" />
-      <workItem from="1568794843546" duration="514000" />
+      <workItem from="1568794843546" duration="777000" />
     </task>
     <task id="LOCAL-00001" summary="[mac-young]-have init a project">
       <created>1568705577958</created>
