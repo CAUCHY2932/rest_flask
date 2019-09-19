@@ -1,4 +1,7 @@
-# Byte-compiled / optimized / DLL files
+*.pyc
+django_rest_lark/__pycache__/
+
+
 __pycache__/
 *.py[cod]
 *$py.class
@@ -102,3 +105,11 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# vscode
+.vscode
+
+# pycharm
+.idea
+
+/.DS_Store
